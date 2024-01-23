@@ -4,10 +4,10 @@ import GoogleProvider from 'next-auth/providers/google';
 
 const authOptions = {
   providers: [
-    // GithubProvider({
-    //   clientId: 'Iv1.f80f8ecfa9cf6532',
-    //   clientSecret: '47fdd9005ebe3c4ab001b3e95c9808a003d2cb5f',
-    // }),
+    GithubProvider({
+      clientId: 'Iv1.f80f8ecfa9cf6532',
+      clientSecret: '47fdd9005ebe3c4ab001b3e95c9808a003d2cb5f',
+    }),
     GoogleProvider({
       clientId:
         '496806371238-dbkmqm60gihtmr69ktnd6d5k51jmfmin.apps.googleusercontent.com',

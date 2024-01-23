@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { GlobalContext } from '@/context';
-import { getAllfavorites } from '@/utils';
-import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
-import { useContext } from 'react';
-import { motion } from 'framer-motion';
-import Navbar from '@/components/navbar';
-import MediaItem from '@/components/media-item';
-import CircleLoader from '@/components/circle-loader';
-import UnauthPage from '@/components/unauth-page';
-import ManageAccounts from '@/components/manage-accounts';
+import { GlobalContext } from "@/context";
+import { getAllfavorites } from "@/utils";
+import { useSession } from "next-auth/react";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { motion } from "framer-motion";
+import Navbar from "@/components/navbar";
+import MediaItem from "@/components/media-item";
+import CircleLoader from "@/components/circle-loader";
+import UnauthPage from "@/components/unauth-page";
+import ManageAccounts from "@/components/manage-accounts";
 
 export default function MyList() {
   const {
@@ -56,20 +56,25 @@ export default function MyList() {
       viewport={{ once: true }}
     >
       <Navbar />
-      <div className='mt-[100px] space-y-0.5 md:space-y-2 px-4'>
-        <h2 className='cursor-pointer text-sm font-semibold text-[#e5e5e5] transition-colors duration-200 hover:text-white md:text-2xl'>
+      <div className="mt-[100px] space-y-0.5 md:space-y-2 px-4">
+        <h2 className="cursor-pointer text-sm font-semibold text-[#e5e5e5] transition-colors duration-200 hover:text-white md:text-2xl">
           My List
         </h2>
-        <div className='grid grid-cols-5 gap-3 items-center scrollbar-hide md:p-2'>
+        <div className="grid grid-cols-5 gap-3 items-center scrollbar-hide md:p-2">
           {favorites && favorites.length
-            ? favorites.map((searchItem) => (
-                <MediaItem
-                  key={searchItem._id}
-                  media={searchItem}
-                  listView={true}
-                />
-              ))
-            : 'No favorites added'}
+            ? favorites.map(
+                (searchItem) => (
+                  console.log("sss", searchItem),
+                  (
+                    <MediaItem
+                      key={searchItem._id}
+                      media={searchItem}
+                      listView={true}
+                    />
+                  )
+                )
+              )
+            : "No favorites added"}
         </div>
       </div>
     </motion.div>

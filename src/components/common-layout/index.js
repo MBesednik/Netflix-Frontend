@@ -7,6 +7,7 @@ import MediaRow from "../media-row";
 import Banner from "../banner";
 
 export default function CommonLayout({ mediaData }) {
+  console.log("tu sm", mediaData);
   return (
     <motion.div
       initial={{ opacity: 0 }}
